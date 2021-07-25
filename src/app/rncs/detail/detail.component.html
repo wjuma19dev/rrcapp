@@ -1,0 +1,73 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar color="light">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="onCloseModal()">
+        <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons> 
+
+    <ion-title> {{ rnc.nombreComercial }} </ion-title>
+
+    <ion-buttons slot="end">
+      <ion-button (click)="onClick()">
+        <ion-icon slot="icon-only" name="ellipsis-vertical-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    
+    <ion-item>
+      <ion-label>
+        <span class="tr">Cedula/Rnc: </span>
+        <span class="th">{{ rnc.cedulaORnc }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item >
+      <ion-label class="ion-text-wrap">
+        <span class="tr">Nombre/Razón Social: </span>
+        <span class="th">{{ rnc.nombreRazonSocial }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <span class="tr">Nombre Comercial: </span>
+        <span class="th">{{ rnc.nombreComercial }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="tr">Régimen de pagos: </span>
+        <span class="th">{{ rnc.regimenDePago }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>
+        <span class="tr">Estado: </span>
+        <span class="th">{{ rnc.estado }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+    <ion-item>
+      <ion-label class="ion-text-wrap">
+        <span class="tr">Actividad Economica: </span>
+        <span class="th">{{ rnc.actividadEconomica }}</span>
+      </ion-label>
+      <ion-icon slot="end" name="checkmark-done-circle-outline"></ion-icon>
+    </ion-item>
+
+  </ion-list>
+</ion-content>

@@ -1,0 +1,7 @@
+<ion-item detail (click)="onClick(rnc)" *ngFor="let rnc of rncs">
+  <ion-icon color="primary" name="business" slot="start"></ion-icon>
+  <ion-label>
+    <h3>{{ rnc.cedulaORnc }}</h3>
+    <p>{{ rnc.nombreComercial }}</p>
+  </ion-label>
+</ion-item>
