@@ -3,6 +3,7 @@ import { MenuController } from '@ionic/angular';
 import { EActividad, EEstado, ERegimen } from './rnc.enum';
 
 import { IRnc } from './rnc.interface';
+import { RncService } from './rnc.service';
 
 @Component({
   selector: 'app-rncs',
@@ -11,28 +12,26 @@ import { IRnc } from './rnc.interface';
 })
 export class RncsPage implements OnInit {
 
-  rncs: IRnc[] = [
-    {
-      cedulaORnc: '101-04359-8',
-      nombreRazonSocial: 'SCOTIABANK REPUBLICA DOMINICANA SA, BANCO MULTIPLE',
-      nombreComercial: 'SCOTIABANK REPUBLICA DOMINICANA',
-      regimenDePago: ERegimen.NORMAL,
-      estado: EEstado.ACTIVO,
-      actividadEconomica: EActividad.BANCOSMULTIPLES
-    },
-    {
-      cedulaORnc: '097-0024444-6',
-      nombreRazonSocial: 'WILSON JUMA',
-      nombreComercial: 'WILSON ANTONIO JUMA ALCANTARA',
-      regimenDePago: ERegimen.NORMAL,
-      estado: EEstado.ACTIVO,
-      actividadEconomica: EActividad.BANCOSMULTIPLES
-    }
-  ]
+  rncs: IRnc[] = [];
 
-  constructor(private menuController: MenuController) { }
+  constructor(
+    private menuController: MenuController,
+    private rncService: RncService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.rncs = this.rncService.obtenerRncs;
+    console.log("NGONINIT")
+    this.rncService.rncsObservador
+      .subscribe(rncs => {
+        this.rncs = rncs;
+      });
+  }
+
+  ionViewDidEnter() {
+    console.log("Entrando a la pagina de RNC");
+    // this.rncs = this.rncService.obtenerRncs;
+  }
 
   onClick() {
     this.menuController.open();
