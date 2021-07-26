@@ -14,6 +14,7 @@ import { DetailComponent } from './detail/detail.component';
 // MIS MODULOS:
 import { ComponentsModule } from '../components/components.module';
 
+
 @NgModule({
   imports: [
     CommonModule,

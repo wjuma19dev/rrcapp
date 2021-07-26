@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
 import { EActividad, EEstado, ERegimen } from './rnc.enum';
 
 import { IRnc } from './rnc.interface';
@@ -29,12 +30,12 @@ export class RncsPage implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor(private menuController: MenuController) { }
 
   ngOnInit() {}
 
   onClick() {
-    
+    this.menuController.open();
   }
 
 }
