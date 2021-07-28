@@ -42,7 +42,6 @@ export class DetailComponent implements OnInit {
         {
           text: 'Eliminar este registro',
           icon: 'trash-outline',
-          cssClass: 'action-btn-eliminar',
           handler: () => {
             console.log('Compartiendo el rnc!');
           }
@@ -51,6 +50,7 @@ export class DetailComponent implements OnInit {
           text: 'Cancelar',
           icon: 'close',
           role: 'cancel',
+          cssClass: 'action-btn-cancelar',
           handler: () => {
             console.log('Cancelaste!')
           }

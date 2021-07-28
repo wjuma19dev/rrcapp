@@ -2,13 +2,13 @@
   <ion-toolbar color="light">
    
     <ion-buttons slot="start">
-      <ion-back-button color="green" defaultHref="/"></ion-back-button>
+      <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
 
-    <ion-title color="green">Crear</ion-title>
+    <ion-title>Crear</ion-title>
 
     <ion-buttons slot="end">
-      <ion-button [disabled]="!createForm.valid" color="green" (click)="onCreateRnc()">
+      <ion-button [disabled]="!createForm.valid" (click)="onCreateRnc()">
         <ion-icon slot="icon-only" name="checkmark-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
@@ -21,7 +21,12 @@
 
     <ion-item>
       <ion-label position="floating">Cedula o Rnc</ion-label>
-      <ion-input type="text" formControlName="cedulaORnc"></ion-input>
+      <ion-input 
+        type="number" 
+        step="1" 
+        min="9" 
+        max="11" 
+        formControlName="cedulaORnc"></ion-input>
     </ion-item>
 
     <ion-item>

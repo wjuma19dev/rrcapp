@@ -1,0 +1,62 @@
+<ion-menu contentId="main-menu" menuId="main-menu" side="start" type="overlay">
+  <ion-header class="ion-no-border">
+    <ion-toolbar color="light">
+      <ion-title>Rnc</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+
+    <ion-list>
+
+      <ion-item>
+        <ion-icon slot="start" name="reader-outline"></ion-icon>
+        <ion-label>Todos los rnc</ion-label>
+        <ion-badge slot="end" color="green"> {{ this.rncService.obtenerRncs.length }} </ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="star-outline"></ion-icon>
+        <ion-label>Mi favoritos</ion-label>
+        <ion-badge slot="end" color="green">0</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="trash-outline"></ion-icon>
+        <ion-label>Eliminados recientemente</ion-label>
+        <ion-badge slot="end" color="green">0</ion-badge>
+      </ion-item>
+
+      <hr class="menu__hr">
+
+      <ion-list-header>
+        <ion-label>Categorias</ion-label>
+        <ion-button>Editar</ion-button>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-icon slot="start" name="person-outline"></ion-icon>
+        <ion-label>Persona fisica</ion-label>
+        <ion-badge slot="end" color="green">0</ion-badge>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon slot="start" name="business-outline"></ion-icon>
+        <ion-label>Persona juridica</ion-label>
+        <ion-badge slot="end" color="green">0</ion-badge>
+      </ion-item>
+
+      <ion-button fill="clear">Nueva</ion-button>
+
+      <hr class="menu__hr">
+
+      <ion-item lines="none">
+        <ion-icon slot="start" name="settings-outline"></ion-icon>
+        <ion-label>Ajustes</ion-label>
+      </ion-item>
+
+
+    </ion-list>
+
+    
+  </ion-content>
+</ion-menu>
