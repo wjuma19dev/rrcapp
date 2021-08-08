@@ -1,3 +1,4 @@
+import { FavoriteService } from './../../favorite/favorite.service';
 import { RncService } from './../../rncs/rnc.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuComponent implements OnInit {
 
-  constructor(public rncService: RncService) { }
+  constructor(public rncService: RncService, public favoriteService: FavoriteService) { }
 
   ngOnInit() {}
 

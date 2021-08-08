@@ -9,16 +9,16 @@ import { IRnc } from '../rnc.interface';
 })
 export class RncComponent implements OnInit {
 
-  @Input() rncs: IRnc[];
+  @Input() rnc: IRnc;
 
   constructor(private modalController: ModalController) { }
 
   ngOnInit() {}
 
-  async onClick(rnc: IRnc): Promise<void> {
+  async onClick(): Promise<void> {
     const modal = await this.modalController.create({
       component: DetailComponent,
-      componentProps: { rnc }
+      componentProps: { rnc: this.rnc }
     });
     await modal.present();
   }

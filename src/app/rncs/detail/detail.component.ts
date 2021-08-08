@@ -26,21 +26,21 @@ export class DetailComponent implements OnInit {
       cssClass: 'action-sheet-dropdown',
       buttons: [
         {
-          text: 'Agregar a favoritos',
+          text: 'Favorito',
           icon: 'star-outline',
           handler: () => {
             console.log('Compartiendo el rnc!');
           }
         },
         {
-          text: 'Compartir en redes',
+          text: 'Compartir',
           icon: 'share-outline',
           handler: () => {
             console.log('Compartiendo el rnc!');
           }
         },
         {
-          text: 'Eliminar este registro',
+          text: 'Eliminar',
           icon: 'trash-outline',
           handler: () => {
             console.log('Compartiendo el rnc!');

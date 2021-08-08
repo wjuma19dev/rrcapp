@@ -6,7 +6,16 @@ import { RncsPage } from './rncs.page';
 const routes: Routes = [
   {
     path: '',
-    component: RncsPage
+    children: [
+      {
+        path: '',
+        component: RncsPage,
+      },
+      {
+        path: 'create',
+        loadChildren: () => import('./create/create.module').then(m => m.CreatePageModule)
+      }
+    ]
   }
 ];
 

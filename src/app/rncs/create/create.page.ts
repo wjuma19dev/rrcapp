@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ModalController, ToastController } from '@ionic/angular';
-import { DetailComponent } from '../rncs/detail/detail.component';
-import { EActividad, EEstado, ERegimen } from '../rncs/rnc.enum';
-import { RncService } from '../rncs/rnc.service';
+import { EActividad, EEstado, ERegimen } from '../rnc.enum';
+import { RncService } from '../rnc.service';
 
 @Component({
   selector: 'app-create',
@@ -70,7 +69,7 @@ export class CreatePage implements OnInit {
       ]
     })
       .then(toast => {
-        this.router.navigate(['/']);
+        this.router.navigate(['../']);
         setTimeout( () => toast.present(), 300 );
       })
 

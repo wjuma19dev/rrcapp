@@ -1,3 +1,5 @@
+import { FavoriteService } from './favorite.service';
+import { IRnc } from './../rncs/rnc.interface';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FavoritePage implements OnInit {
 
-  constructor() { }
+  public favorites: IRnc[];
+
+  constructor(private _favoriteService: FavoriteService) { }
 
   ngOnInit() {
+    this.favorites = this._favoriteService.favorites;
+    this._favoriteService.favoritesUpdated.subscribe(favorites => {
+      this.favorites = favorites;
+    });
   }
 
 }

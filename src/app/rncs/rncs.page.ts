@@ -1,5 +1,7 @@
+import { FavoriteService } from './../favorite/favorite.service';
+import { MenuOptionsComponent } from './../components/menu-options/menu-options.component';
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { IonItemSliding, MenuController, PopoverController } from '@ionic/angular';
 import { EActividad, EEstado, ERegimen } from './rnc.enum';
 
 import { IRnc } from './rnc.interface';
@@ -13,10 +15,13 @@ import { RncService } from './rnc.service';
 export class RncsPage implements OnInit {
 
   rncs: IRnc[] = [];
+  isAuthenticate: boolean = false;
 
   constructor(
     private menuController: MenuController,
-    private rncService: RncService
+    private rncService: RncService,
+    private _popoverCtrl: PopoverController,
+    private _favoriteService: FavoriteService
   ) { }
 
   ngOnInit() {
@@ -35,6 +40,22 @@ export class RncsPage implements OnInit {
 
   onClick() {
     this.menuController.open();
+  }
+
+  onMenuOptions(event: Event) {
+    this._popoverCtrl.create({
+      component: MenuOptionsComponent,
+      event: event,
+      mode: 'ios'
+    }).then(popover => {
+      popover.present();
+    })
+  }
+
+  onFavorite(rnc: IRnc, ionSliding: IonItemSliding): void {
+    ionSliding.close();
+    this._favoriteService.addFavorite(rnc);
+    // console.log(rnc);
   }
 
 }
